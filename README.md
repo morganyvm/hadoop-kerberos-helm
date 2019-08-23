@@ -13,27 +13,27 @@ If you are using minikube, create the paths:
 
 #### 4. Start PVCs
 ```
-helm install -n hdfs-pvs pv --namespace=bigdata
+helm install -n hdfs-pvs pv --namespace bigdata
 ```
 #### 5. Start Pods
 
 a. KDC Node
 ```
-helm install -n hdfs-kdc kdc --namespace=bigdata
+helm install -n hdfs-kdc kdc --namespace bigdata
 ```
 b. NN Node
 ```
-helm install -n hdfs-nn namenode --namespace=bigdata
+helm install -n hdfs-nn namenode --namespace bigdata
 ```
 
 c. DN Node
 ```
-helm install -n hdfs-dn datanode --namespace=bigdata
+helm install -n hdfs-dn datanode --namespace bigdata
 ```
 
 d. DataPopulator Node
 ```
-helm install -n hdfs-dp datapopulator --namespace=bigdata
+helm install -n hdfs-dp datapopulator --namespace bigdata
 ```
 
 #### 6. Run kinit in any node
