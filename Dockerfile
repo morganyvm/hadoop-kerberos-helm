@@ -11,8 +11,9 @@ RUN sed -i -e 's/#//' -e 's/default_ccache_name/# default_ccache_name/' /etc/krb
 
 RUN useradd -u 1098 hdfs
 
-ADD hadoop-2.7.3.tar.gz /
-RUN ln -s hadoop-2.7.3 hadoop
+ADD hadoop-2.7.7.tar.gz /
+RUN ln -s hadoop-2.7.7 hadoop
+RUN ls -la .
 RUN chown -R -L hdfs /hadoop
 
 

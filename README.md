@@ -19,26 +19,26 @@ helm install -n hdfs-pvs pv
 
 a. KDC Node
 ```
-helm install -n hdfs-kdc kdc
+helm install -n hdfs-kdc kdc --namespace=bigdata
 ```
 b. NN Node
 ```
-helm install -n hdfs-nn namenode
+helm install -n hdfs-nn namenode --namespace=bigdata
 ```
 
 c. DN Node
 ```
-helm install -n hdfs-dn datanode
+helm install -n hdfs-dn datanode --namespace=bigdata
 ```
 
 d. DataPopulator Node
 ```
-helm install -n hdfs-dp datapopulator
+helm install -n hdfs-dp datapopulator --namespace=bigdata
 ```
 
 #### 6. Run kinit in any node
 ```
-kubectl exec -it <POD_NAME> -- /bin/bash
+kubectl exec  --namespace=bigdata  -it <POD_NAME> -- /bin/bash
 su hdfs
 kinit -kt /var/keytabs/hdfs.keytab hdfs/nn.default.svc.cluster.local
 hdfs dfs -ls /
