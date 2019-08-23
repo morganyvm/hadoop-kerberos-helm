@@ -13,7 +13,7 @@ If you are using minikube, create the paths:
 
 #### 4. Start PVCs
 ```
-helm install -n hdfs-pvs pv
+helm install -n hdfs-pvs pv --namespace=bigdata
 ```
 #### 5. Start Pods
 
