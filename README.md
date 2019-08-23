@@ -38,7 +38,7 @@ helm install -n hdfs-dp datapopulator --namespace bigdata
 
 #### 6. Run kinit in any node
 ```
-kubectl exec  --namespace bigdata  -it <POD_NAME> -- /bin/bash
+kubectl exec  --namespace bigdata  -it $(kubectl get pods --namespace=bigdata | tail -1 | awk '{print $1}')  -- /bin/bash
 su hdfs
 kinit -kt /var/keytabs/hdfs.keytab hdfs/nn.bigdata.svc.cluster.local
 hdfs dfs -ls /
